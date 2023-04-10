@@ -1,0 +1,21 @@
+{% for article in articlesDB %}
+
+<div class="card border-0 position-relative pb-5">
+    <img src="{{ article[6] }}" class="card-img-top" alt="Photo d'un article" />
+    <div class="card-body">
+        <h6 class="card-text fs-6 fw-lighter">Référence : {{ article[0] }}</h6>
+        <h5 class="card-title">{{ article[1] }}</h5>
+        <h6 class="card-text d-none">{{ article[2] }}</h6>
+        <p class="card-text">{{ article[3] }}</p>
+
+        {% if (article[5] > 0) %}
+        <button type="button" class="btn btn-danger bold fw-bold position-absolute bottom-0 translate-middle-x"
+                > {{ article[4]-article[4]*(article[5]/100) }}€ <br/> avec {{ article[5] }}% *</button>
+        {% else %}
+        <button type="button" class="btn btn-success bold fw-bold position-absolute bottom-0 translate-middle-x"
+        >{{ article[4]  }} €</button>
+        {% endif %}
+    </div>
+</div>
+
+{% endfor %}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Mercadona</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+
+    <div class="m-5">
+        <h2 class="my-1">Bienvenue sur la page Admin de votre site Web.</h2>
+        <p class="my-2">
+            Voici le formulaire pour ajouter un produit. <br>
+            Pensez bien à ajouter un fichier image au format portrait et .jpg, .jpeg, .png ou encore .gif ! <br>
+            L'ensemble des champs sont obligatoires, à l'exception de la réduction bien sûr, qu'il faudra laisser à 0 le cas échéant.
+        </p>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        <div class="m-3">
+            <form action="/add_product" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="label" class="form-label">Label : <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control w-25" id="label" name="label" aria-describedby="labelHelp" required>
+                    <div id="labelHelp" class="form-text">Chemise, Pantalon, Veste, Portefeuille .....</div>
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Catégorie : <span class="text-danger">*</span></label>
+                    <input class="form-control w-25" id="category" name="category" aria-describedby="categoryHelp">
+                    <div id="categoryHelp" class="form-text">Haut, Bas, Accessoire .....</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
+                    <textarea class="form-control w-50" id="description" name="description" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Prix : <span class="text-danger">*</span></label>
+                    <input class="form-control w-25" id="price" name="price" required>
+                </div>
+                <div class="mb-3">
+                    <label for="discount" class="form-label">Remise (si il y a) :</label>
+                    <input class="form-control w-25" id="discount" name="discount" placeholder="0">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image : <span class="text-danger">*</span></label>
+                    <input type="file" class="form-control w-50" id="image" name="image" aria-describedby="imageHelp" accept="image/jpeg, image/png, image/jpg, image/gif" required>
+                    <div id="imageHelp" class="form-text">Format portrait et JPG, JPEG, PNG ou GIF</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Ajouter l'article</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="m-5">
+        <h3 class="my-1">Pour ajouter des promos, c'est par ici !</h3>
+        <p class="my-2">
+            Il suffit d'indiquer la référence du produit (par exemple '5') puis d'indiquer la réduction à appliquer sur le produit.<br>
+            Vous souhaitez enlever une promotion ? Même processus en indiquant le chiffre 0 dans la partie réduction.<br>
+            Attention, les nombres à virgules ne sont pas acceptés.
+        </p>
+
+        <div class="m-3">
+            <form action="/add_discount" method="post">
+                <div class="mb-3">
+                    <label for="reference" class="form-label">Numéro de référence : <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control w-25" id="reference" name="reference" aria-describedby="referenceHelp" required>
+                    <div id="referenceHelp" class="form-text">Visible sur le site par tout à chacun sous l'image.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="addDiscount" class="form-label">Réduction en % : <span class="text-danger">*</span></label>
+                    <input class="form-control w-25" id="addDiscount" name="addDiscount" aria-describedby="addDiscountHelp">
+                    <div id="addDiscountHelp" class="form-text">5, 10, 15 ou bien plus !</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter la promotion</button>
+            </form>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

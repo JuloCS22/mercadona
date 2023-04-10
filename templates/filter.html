@@ -1,0 +1,10 @@
+<form method="POST" action="{{ url_for('category') }}" class="m-3">
+    <label for="category" class="mx-3">Sélectionnez une catégorie:</label>
+    <select name="category" id="category">
+        <option value="">Toutes les catégories</option>
+        <option value="Bas">Bas</option>
+        <option value="Haut">Haut</option>
+        <option value="Accessoire">Accessoire</option>
+    </select>
+    <input type="submit" value="Filtrer" class="btn btn-primary mx-3">
+</form>
