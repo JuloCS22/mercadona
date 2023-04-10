@@ -1,1 +1,1 @@
-web: gunicorn mercadona:app.py
+web: gunicorn app:app
