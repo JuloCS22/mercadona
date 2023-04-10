@@ -1,0 +1,4 @@
+Flask==2.2.3
+psycopg2==2.9.6
+psycopg2_binary==2.9.6
+Werkzeug==2.2.3
