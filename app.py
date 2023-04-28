@@ -18,6 +18,7 @@ def homepage():
     cursorArticles = conn.cursor()
     cursorArticles.execute("SELECT * FROM mercadona")
     articlesDB = cursorArticles.fetchall()
+    conn.close()
 
     return render_template('homepage.html', articlesDB=articlesDB)
 
