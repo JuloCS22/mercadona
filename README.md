@@ -1,7 +1,8 @@
 <h1>Bienvenue sur le site de Mercadona, un shop en ligne pour le besoin de mon examen final avec Studi/Hetic.</h1>
 
 Pour le voir, il suffit de se rendre sur le site hébergé sur Heroku : https://mercadonajulien.herokuapp.com/ <br> 
-La base de donnée est sur Railway et ne devrait pas se déconnecter de si tôt mais au besoin, j'indique plus bas comment contourner un souci.
+La base de donnée est sur Railway et ne devrait pas se déconnecter de si tôt mais au besoin, j'indique plus bas comment contourner un souci. <br>
+<i>Petite astuce pour les images du site : elles proviennent du site https://www.octobre-editions.com/fr en cliquant sur 'enregistrer sous' pour conserver le même formalisme et style global du site.</i>
 
 
 <h2>/!\ En cas de souci de connexion au site ou d'erreur /!\ </h2>
